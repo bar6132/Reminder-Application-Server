@@ -5,7 +5,6 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Note
 from .serializers import NotesSerializer
 
-
 @csrf_exempt
 @api_view(['GET', 'POST'])
 def note_list(request, pk=None):
@@ -89,3 +88,5 @@ def note_detail(request, pk):
             return Response(status=status.HTTP_404_NOT_FOUND)
         note.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
